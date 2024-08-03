@@ -1,0 +1,17 @@
+---
+Checks: >
+  *,
+  -fuchsia-*,
+  -google-*,
+  -llvm-*,
+  -llvmlibc-*,
+  -zircon-*,
+  -altera-*,
+  -readability-identifier-length,
+  -modernize-use-trailing-return-type,
+  -cppcoreguidelines-avoid-non-const-global-variables,
+
+FormatStyle: file
+SystemHeaders: false
+---
+

@@ -1,0 +1,15 @@
+name: Check .clang-format
+on: [push, pull_request]
+jobs:
+  check:
+    strategy:
+      matrix:
+        clang-format-version: [14, 15, 16, 17]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout files
+        uses: actions/checkout@v4
+      - name: Install Python packages
+        run: pip install -U pyyaml requests
+      - name: Run check.py
+        run: ./check.py --clang-format-version ${{ matrix.clang-format-version }}
